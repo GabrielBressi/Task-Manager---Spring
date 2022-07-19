@@ -1,13 +1,13 @@
 # Task Manager - Spring
 
-Dependencies: 
+##Dependencies: 
 
-Spring Web
-Spring Boot DevTool
-Thymeleaf
-Spring Data JPA
-MySQL Driver
-Validation
+Spring Web<br>
+Spring Boot DevTool<br>
+Thymeleaf<br>
+Spring Data JPA<br>
+MySQL Driver<br>
+Validation<br>
 
 ---------------------------------------------
 ## Project created to practice Spring MVC 
