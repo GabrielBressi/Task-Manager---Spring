@@ -1,6 +1,6 @@
 # Task Manager - Spring
 
-##Dependencies: 
+## Dependencies: 
 
 Spring Web<br>
 Spring Boot DevTool<br>
