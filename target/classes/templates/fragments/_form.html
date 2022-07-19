@@ -1,0 +1,20 @@
+<div class="container mt-4" th:fragment="form(requisitionFormTask, action)">
+  <form th:object="${requisitionFormTask}" th:action="${action}" method="POST">
+    <div class="mb-3">
+      <label class="label-control">Task Name</label>
+      <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{taskName}">
+      <div class="invalid-feedback" th:errors="*{taskName}">
+        Please fill the task's name
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="form-label" class="label-control">Status</label>
+      <select class="form-select" th:field="*{statusTask}">
+        <option th:each="status: ${statusTask}"
+                th:value="${status}" th:text="${status}"></option>
+      </select>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+    <a href="javascript:history.back()">Back</a>
+  </form>
+</div>

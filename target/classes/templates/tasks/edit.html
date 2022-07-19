@@ -1,0 +1,12 @@
+<html>
+  <head th:replace="~{fragments/_head :: head}"></head>
+   <body>
+    <header>
+      <nav th:replace="~{fragments/_navbar :: navbar}"></nav>
+    </header>
+
+    <div th:replace="~{fragments/_form :: form(requisitionFormTask, '/tasks/' + ${taskId})}"></div>
+    
+   </body>
+
+</html>

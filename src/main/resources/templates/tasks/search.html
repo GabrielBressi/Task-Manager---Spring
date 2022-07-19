@@ -1,0 +1,49 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head th:replace="~{fragments/_head :: head}"></head>
+<body>
+    
+
+    <header>
+        <nav th:replace="~{fragments/_navbar :: navbar}"></nav>
+    </header>
+    <div class="container mt-2">
+        <div class="row">
+            <span id="erro" th:styleappend="${(param.error == null || param.message == null) ? 'display: none;' : ''}"
+                th:classappend="${(param.error != null && param.error) ? 'alert alert-danger' : 'alert alert-success'}"
+                th:text="${param.message != null ? param.message : ''}">Test Message
+            </span>
+        </div>
+    </div>
+    <div class="row mt-2"  style="text-align:center;">
+        <h2>Tasks List</h2>
+    </div>
+    <div class="container mt-4 index-table">
+        <table class="table table-dark table-hover table-striped">
+            <thead>
+                <tr>
+                    <th class="col">ID</th>
+                    <th class="col">Task Name</th>
+                    <th class="col">Status</th>
+                    <th class="col">Actions</th>
+                    <th class="col"></th>
+                    <th class="col"></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr th:each="task : ${tasks}">
+                    <th class="col-1" scope="row" th:text="${task.getId()}">ID</th>
+                    <td class="col-4" th:text="${task.taskName}">Task Name</td>
+                    <td class="col-2" th:text="${task.statusTask.toString()}">Status</td>
+                    <td class="col-1"><a th:href="@{/tasks/{taskId}(taskId = ${task.id})}">Details</a></td>
+                    <td class="col-1"><a th:href="@{/tasks/{taskId}/edit(taskId = ${task.id})}">Edit</a></td>
+                    <td class="col-1"><a th:href="@{/tasks/{taskId}/delete(taskId = ${task.id})}" onclick="return confirm('Are you sure?')">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+   
+
+</body>

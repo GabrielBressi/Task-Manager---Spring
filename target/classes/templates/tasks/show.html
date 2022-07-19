@@ -1,0 +1,29 @@
+<html>
+  <head th:replace="~{fragments/_head :: head}"></head>
+  <body>
+    <header>
+      <nav th:replace="~{fragments/_navbar :: navbar}"></nav>
+    </header>
+
+  <main>
+    <div class="task">
+      <div class="container mt-4">
+        <div class="row">
+          <div class="col-12">
+            <b>Task Name: </b><span th:text="${task.taskName}"></span>
+            <br>
+            <b>Status: </b><span th:text="${task.statusTask.toString()}"></span> <br>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <a href="#  ">Edit</a>
+            <a href="/tasks">Back</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  </body>
+</html>
